@@ -32,4 +32,22 @@ export default {
 
 <style lang="scss">
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 1px solid red;
+}
+
+main {
+  background: #f3f3f3;
+  display: flex;
+  justify-content: center;
+
+
+  .container {
+    width: 940px;
+  }
+}
+
 </style>
