@@ -3,16 +3,16 @@
     <div class="logo"><router-view to="#"><img src="../assets/Lo-go.png" alt="logo"></router-view></div>
 
     <ul>
-      <li><router-view to="/men"></router-view></li>
-      <li><router-view to="/women"></router-view></li>
-      <li><router-view to="/sale"></router-view></li>
-      <li><router-view to="/info"></router-view></li>
-      <li><router-view to="/contact"></router-view></li>
+      <li><router-link to="/men">Men</router-link></li>
+      <li><router-link to="/women">Women</router-link></li>
+      <li><router-link to="/sale">Sale!</router-link></li>
+      <li><router-link to="/info">Info</router-link></li>
+      <li><router-link to="/contact">Contacts</router-link></li>
     </ul>
 
-    <div class="search"></div>
-    <div class="shopping"></div>
-    <div class="profile"></div>
+    <div class="search"><img src="../assets/Search-Icon.png" alt="logo"></div>
+    <div class="shopping"><img src="../assets/Shoppin-Cart-Icon.png" alt="logo"></div>
+    <div class="profile"><img src="../assets/Profile-Icon.png" alt="logo"></div>
   </nav>
 </template>
 
@@ -25,9 +25,69 @@ export default {
 <style scoped lang="scss">
 
 .nav-bar {
+  margin: 50px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #3c5569;
+  border-radius: 5px;
+  // height: 60px;
+
   .logo {
-    width: 70px;
-    height: 60px;
+
+    img {
+      width: 32px;
+      height: 32px;
+      margin: 16px;
+    }
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    li {
+      list-style-type: none;
+      text-transform: uppercase;
+      padding: 0 35px;
+      font-size: 16px;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      &::after {
+        content: "";
+        background: #000;
+        width: 11px;
+        height: 60px;
+        position: relative;
+        // top: 0;
+        z-index: 10;
+      }
+
+      &:nth-child(1) {
+        padding: 24px 52px 24px 34px;
+      }
+      &:nth-child(2) {
+        padding: 24px 52px 24px 36px;
+      }
+      &:nth-child(3) {
+        padding: 24px 44px 24px 42px;
+      }
+      &:nth-child(4) {
+        padding: 24px 44px 24px 42px;
+      }
+      &:nth-child(5) {
+        padding: 24px 40px 24px 40px;
+      }
+    }
+  }
+
+  .search,
+  .shopping,
+  .profile {
+    padding: 18px;
   }
 }
 

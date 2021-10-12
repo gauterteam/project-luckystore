@@ -1,5 +1,5 @@
 <template>
-  Header
+  <div class="header">Header</div>
 </template>
 
 <script>
@@ -9,5 +9,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+.header {
+  height: 270px;
+}
 </style>

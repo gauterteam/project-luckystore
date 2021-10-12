@@ -1,16 +1,5 @@
 <template>
-  <the-header></the-header>
-  <main>
-    <div class="container">
-      <the-navbar></the-navbar>
-      <div class="slidebar"></div>
-      <div class="shop_cards">
-        <the-card></the-card>
-      </div>
-      <div class="registration"></div>
-    </div>
-  </main>
-  <the-footer></the-footer>
+  <router-view></router-view>
 </template>
 
 <script>
@@ -31,23 +20,5 @@ export default {
 </script>
 
 <style lang="scss">
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  border: 1px solid red;
-}
-
-main {
-  background: #f3f3f3;
-  display: flex;
-  justify-content: center;
-
-
-  .container {
-    width: 940px;
-  }
-}
 
 </style>
