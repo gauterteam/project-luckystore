@@ -31,14 +31,14 @@ export default {
   justify-content: center;
   background: #3c5569;
   border-radius: 5px;
-  // height: 60px;
+  height: 70px;
 
   .logo {
 
     img {
       width: 32px;
       height: 32px;
-      margin: 16px;
+      margin: 14px 18px 14px 20px;
     }
   }
 
@@ -50,6 +50,7 @@ export default {
       text-transform: uppercase;
       padding: 0 35px;
       font-size: 16px;
+      position: relative;
 
       a {
         color: #fff;
@@ -57,13 +58,23 @@ export default {
       }
 
       &::after {
-        content: "";
-        background: #000;
-        width: 11px;
-        height: 60px;
-        position: relative;
-        // top: 0;
-        z-index: 10;
+        content: '';
+        background: #324758;
+        width: 1px;
+        height: 70px;
+        position: absolute;
+        top: 0px;
+        right: 0;
+      }
+
+      &::before {
+        content: '';
+        background: #546a7b;
+        width: 1px;
+        height: 70px;
+        position: absolute;
+        top: 0px;
+        left: 0;
       }
 
       &:nth-child(1) {
