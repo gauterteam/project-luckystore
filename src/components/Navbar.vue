@@ -30,15 +30,30 @@ export default {
   align-items: center;
   justify-content: center;
   background: #3c5569;
-  border-radius: 5px;
-  height: 70px;
+  border-radius: 4px;
+  height: 60px;
 
   .logo {
+    position: relative;
+    height: 100%;
+    margin-right: 1px;
+
+    &::after {
+      content: '';
+      background: #324758;
+      width: 1px;
+      height: 60px;
+      position: absolute;
+      top: 0px;
+      right: -1px;
+    }
 
     img {
       width: 32px;
       height: 32px;
-      margin: 14px 18px 14px 20px;
+      margin: auto;
+      padding: 14px 18px 14px 20px;
+      box-sizing: content-box;
     }
   }
 
@@ -51,6 +66,7 @@ export default {
       padding: 0 35px;
       font-size: 16px;
       position: relative;
+      margin: 0 1px;
 
       a {
         color: #fff;
@@ -61,44 +77,103 @@ export default {
         content: '';
         background: #324758;
         width: 1px;
-        height: 70px;
+        height: 60px;
         position: absolute;
         top: 0px;
-        right: 0;
+        right: -1px;
       }
 
       &::before {
         content: '';
         background: #546a7b;
         width: 1px;
-        height: 70px;
+        height: 60px;
         position: absolute;
         top: 0px;
-        left: 0;
+        left: -1px;
       }
 
       &:nth-child(1) {
-        padding: 24px 52px 24px 34px;
+        padding: 19px 52px 19px 34px;
+        width: 119px;
+        height: 60px;
       }
       &:nth-child(2) {
-        padding: 24px 52px 24px 36px;
+        padding: 19px 52px 19px 36px;
+        width: 148px;
+        height: 60px;
       }
       &:nth-child(3) {
-        padding: 24px 44px 24px 42px;
+        padding: 19px 44px 19px 42px;
+        width: 125px;
+        height: 60px;
       }
       &:nth-child(4) {
-        padding: 24px 44px 24px 42px;
+        padding: 19px 44px 19px 42px;
+        width: 122px;
+        height: 60px;
       }
       &:nth-child(5) {
-        padding: 24px 40px 24px 40px;
+        padding: 19px 40px 19px 40px;
+        width: 164px;
+        height: 60px;
       }
     }
   }
 
-  .search,
-  .shopping,
+  .search {
+    padding: 16px;
+    margin-left: 1px;
+  }
+
+  .shopping {
+    padding: 17px;
+    margin: 0 2px;
+  }
+
   .profile {
     padding: 18px;
+    margin-right: 1px;
+    position: relative;
+    width: 58px;
+    height: 60px;
+
+    &::before {
+      content: '';
+      background: #546a7b;
+      width: 1px;
+      height: 60px;
+      position: absolute;
+      top: 0px;
+      left: -1px;
+    }
+  }
+
+  .search,
+  .shopping {
+    position: relative;
+    width: 58px;
+    height: 60px;
+
+    &::after {
+      content: '';
+      background: #324758;
+      width: 1px;
+      height: 60px;
+      position: absolute;
+      top: 0px;
+      right: -1px;
+    }
+
+    &::before {
+      content: '';
+      background: #546a7b;
+      width: 1px;
+      height: 60px;
+      position: absolute;
+      top: 0px;
+      left: -1px;
+    }
   }
 }
 
