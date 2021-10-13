@@ -3,8 +3,14 @@
     <div class="logo"><router-view to="#"><img src="../assets/Lo-go.png" alt="logo"></router-view></div>
 
     <ul>
-      <li><router-link to="/men">Men</router-link></li>
-      <li><router-link to="/women">Women</router-link></li>
+      <li>
+        <router-link to="/men">Men</router-link>
+        <div class="menu-men"><img src="../assets/Arrow.png" alt=""></div>
+      </li>
+      <li>
+        <router-link to="/women">Women</router-link>
+        <div class="menu-women"><img src="../assets/Arrow.png" alt=""></div>
+        </li>
       <li><router-link to="/sale">Sale!</router-link></li>
       <li><router-link to="/info">Info</router-link></li>
       <li><router-link to="/contact">Contacts</router-link></li>
@@ -97,22 +103,50 @@ export default {
         padding: 19px 52px 19px 34px;
         width: 119px;
         height: 60px;
+
+        &:hover {
+          img {
+            transform: rotate(180deg);
+          }
+        }
+
+        img {
+          position: absolute;
+          top: 28px;
+          left: 75px;
+        }
       }
+
       &:nth-child(2) {
         padding: 19px 52px 19px 36px;
         width: 148px;
         height: 60px;
+
+        &:hover {
+          img {
+            transform: rotate(180deg);
+          }
+        }
+
+        img {
+          position: absolute;
+          top: 28px;
+          left: 104px;
+        }
       }
+
       &:nth-child(3) {
         padding: 19px 44px 19px 42px;
         width: 125px;
         height: 60px;
       }
+
       &:nth-child(4) {
         padding: 19px 44px 19px 42px;
         width: 122px;
         height: 60px;
       }
+
       &:nth-child(5) {
         padding: 19px 40px 19px 40px;
         width: 164px;
