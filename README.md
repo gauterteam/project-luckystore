@@ -1,3 +1,3 @@
 # luckystore
 
-[Demo](http://example.com/)
+[Demo]( https://gauterteam.github.io/project-luckystore/)
