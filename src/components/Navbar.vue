@@ -2,30 +2,42 @@
   <nav class="nav-bar">
     <div class="logo"><router-link to="/"><img src="../assets/Lo-go.png" alt="logo"></router-link></div>
 
-    <ul>
-      <li>
+    <ul class="nav-menu">
+      <li class="nav-menu-link">
         <div class="border-line">
           <router-link to="/men">Men</router-link>
         </div>
         <div class="menu-men"><img src="../assets/Arrow.png" alt=""></div>
+        <ul class="men-under_menu">
+          <li><div>Jeans</div></li>
+          <li><div>Shorts</div></li>
+          <li><div>T-shirts</div></li>
+          <li><div>Sweaters</div></li>
+        </ul>
       </li>
-      <li>
+      <li class="nav-menu-link">
         <div class="border-line">
           <router-link to="/women">Women</router-link>
         </div>
         <div class="menu-women"><img src="../assets/Arrow.png" alt=""></div>
-        </li>
-      <li>
+        <ul class="women-under_menu">
+          <li><div>T-shirts</div></li>
+          <li><div>Sweaters</div></li>
+          <li><div>Jeans</div></li>
+          <li><div>Shorts</div></li>
+        </ul>
+      </li>
+      <li class="nav-menu-link">
         <div class="border-line">
           <router-link to="/sale">Sale!</router-link>
         </div>
       </li>
-      <li>
+      <li class="nav-menu-link">
         <div class="border-line">
           <router-link to="/info">Info</router-link>
         </div>
       </li>
-      <li>
+      <li class="nav-menu-link">
         <div class="border-line">
           <router-link to="/contact">Contacts</router-link>
         </div>
@@ -93,10 +105,11 @@ export default {
     }
   }
 
-  ul {
+  .nav-menu {
     display: flex;
     align-items: center;
-    li {
+
+    .nav-menu-link {
       list-style-type: none;
       text-transform: uppercase;
       padding: 0 35px;
@@ -133,6 +146,7 @@ export default {
         padding: 19px 52px 19px 34px;
         width: 119px;
         height: 60px;
+        transition: 0.5s ease-in-out;
 
         &:hover {
           img {
@@ -144,12 +158,57 @@ export default {
             position: absolute;
             height: 41px;
           }
+
+          .men-under_menu {
+            display: block;
+            transition: 0.5s ease-in;
+            overflow: hidden;
+            height: 140px;
+
+            li {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 35px;
+              cursor: pointer;
+              background: #fff;
+
+              &:hover {
+                background: rgba(0, 0, 0, 0.192);
+              }
+            }
+          }
         }
 
         img {
           position: absolute;
           top: 28px;
           left: 75px;
+        }
+
+        .men-under_menu {
+          position: absolute;
+          left: -1px;
+          top: 60px;
+          list-style-type: none;
+          display: none;
+          transition: 0.5 ease-out;
+          border: 1px solid #000;
+          height: 0px;
+
+          li {
+            padding: 0;
+            margin: auto;
+            width: 119px;
+            font-size: 12px;
+            color: #3c5569;
+            transition: 0.5s ease-out;
+            border-bottom: 1px solid #000;
+
+            &:last-child {
+              border-bottom: 0;
+            }
+          }
         }
       }
 
@@ -168,12 +227,57 @@ export default {
             position: absolute;
             height: 41px;
           }
+
+          .women-under_menu {
+            display: block;
+            transition: 0.5s ease-in;
+            overflow: hidden;
+            height: 140px;
+
+            li {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 35px;
+              cursor: pointer;
+              background: #fff;
+
+              &:hover {
+                background: rgba(0, 0, 0, 0.192);
+              }
+            }
+          }
         }
 
         img {
           position: absolute;
           top: 28px;
           left: 104px;
+        }
+
+        .women-under_menu {
+          position: absolute;
+          left: -1px;
+          top: 60px;
+          list-style-type: none;
+          display: none;
+          transition: 0.5 ease-out;
+          border: 1px solid #000;
+          height: 0px;
+
+          li {
+            padding: 0;
+            margin: auto;
+            width: 148px;
+            font-size: 12px;
+            color: #3c5569;
+            transition: 0.5s ease-out;
+            border-bottom: 1px solid #000;
+
+            &:last-child {
+              border-bottom: 0;
+            }
+          }
         }
       }
 

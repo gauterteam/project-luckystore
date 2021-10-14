@@ -33,12 +33,15 @@ export default {
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   // border: 1px solid red;
   font-family: 'Open Sans', sans-serif;
+  user-select: none;
 }
 
 main {
