@@ -1,19 +1,35 @@
 <template>
   <nav class="nav-bar">
-    <div class="logo"><router-view to="#"><img src="../assets/Lo-go.png" alt="logo"></router-view></div>
+    <div class="logo"><router-link to="/"><img src="../assets/Lo-go.png" alt="logo"></router-link></div>
 
     <ul>
       <li>
-        <router-link to="/men">Men</router-link>
+        <div class="border-line">
+          <router-link to="/men">Men</router-link>
+        </div>
         <div class="menu-men"><img src="../assets/Arrow.png" alt=""></div>
       </li>
       <li>
-        <router-link to="/women">Women</router-link>
+        <div class="border-line">
+          <router-link to="/women">Women</router-link>
+        </div>
         <div class="menu-women"><img src="../assets/Arrow.png" alt=""></div>
         </li>
-      <li><router-link to="/sale">Sale!</router-link></li>
-      <li><router-link to="/info">Info</router-link></li>
-      <li><router-link to="/contact">Contacts</router-link></li>
+      <li>
+        <div class="border-line">
+          <router-link to="/sale">Sale!</router-link>
+        </div>
+      </li>
+      <li>
+        <div class="border-line">
+          <router-link to="/info">Info</router-link>
+        </div>
+      </li>
+      <li>
+        <div class="border-line">
+          <router-link to="/contact">Contacts</router-link>
+        </div>
+      </li>
     </ul>
 
     <div class="search"><img src="../assets/Search-Icon.png" alt="logo"></div>
@@ -43,6 +59,7 @@ export default {
     position: relative;
     height: 100%;
     margin-right: 1px;
+    padding: 14px 18px 14px 20px;
 
     &::after {
       content: '';
@@ -58,8 +75,21 @@ export default {
       width: 32px;
       height: 32px;
       margin: auto;
-      padding: 14px 18px 14px 20px;
-      box-sizing: content-box;
+      transition: 0.5s ease-out;
+    }
+
+    &:hover {
+      img {
+        transition: 0.5s ease-in;
+        transform: rotate(-180deg);
+      }
+    }
+
+    &:active {
+      img {
+        transition: 0.1s;
+        transform: rotate(-90deg);
+      }
     }
   }
 
@@ -108,6 +138,12 @@ export default {
           img {
             transform: rotate(180deg);
           }
+
+          .border-line {
+            border-bottom: 4px solid #fff;
+            position: absolute;
+            height: 41px;
+          }
         }
 
         img {
@@ -126,6 +162,12 @@ export default {
           img {
             transform: rotate(180deg);
           }
+
+          .border-line {
+            border-bottom: 4px solid #fff;
+            position: absolute;
+            height: 41px;
+          }
         }
 
         img {
@@ -139,18 +181,42 @@ export default {
         padding: 19px 44px 19px 42px;
         width: 125px;
         height: 60px;
+
+        &:hover {
+          .border-line {
+            border-bottom: 4px solid #fff;
+            position: absolute;
+            height: 41px;
+          }
+        }
       }
 
       &:nth-child(4) {
         padding: 19px 44px 19px 42px;
         width: 122px;
         height: 60px;
+
+        &:hover {
+          .border-line {
+            border-bottom: 4px solid #fff;
+            position: absolute;
+            height: 41px;
+          }
+        }
       }
 
       &:nth-child(5) {
         padding: 19px 40px 19px 40px;
         width: 164px;
         height: 60px;
+
+        &:hover {
+          .border-line {
+            border-bottom: 4px solid #fff;
+            position: absolute;
+            height: 41px;
+          }
+        }
       }
     }
   }
@@ -171,6 +237,22 @@ export default {
     position: relative;
     width: 58px;
     height: 60px;
+    cursor: pointer;
+    transition: 0.5s ease-out;
+
+    &:hover {
+      img {
+        transition: 0.5s ease-in;
+        transform: scale(0.9);
+      }
+    }
+
+    &:active {
+      img {
+        transition: 0s;
+        transform: scale(1.1);
+      }
+    }
 
     &::before {
       content: '';
@@ -188,6 +270,22 @@ export default {
     position: relative;
     width: 58px;
     height: 60px;
+    cursor: pointer;
+    transition: 0.5s ease-out;
+
+    &:hover {
+      img {
+        transition: 0.5s ease-in;
+        transform: scale(0.9);
+      }
+    }
+
+    &:active {
+      img {
+        transition: 0s;
+        transform: scale(1.1);
+      }
+    }
 
     &::after {
       content: '';
