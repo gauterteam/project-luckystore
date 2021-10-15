@@ -24,7 +24,7 @@
           <li><div>T-shirts</div></li>
           <li><div>Sweaters</div></li>
           <li><div>Jeans</div></li>
-          <li><div>Shorts</div></li>
+          <li><div>Shorts-t</div></li>
         </ul>
       </li>
       <li class="nav-menu-link">
