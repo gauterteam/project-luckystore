@@ -55,4 +55,9 @@ main {
   }
 }
 
+.slidebar {
+  height: 440px;
+  margin-bottom: 40px;
+}
+
 </style>

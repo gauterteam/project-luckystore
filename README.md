@@ -1,3 +1,3 @@
-# luckystore
+ luckystore
 
-[Demo](http://example.com/)
+[Demo](https://luckystore.netlify.app/)
