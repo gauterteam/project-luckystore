@@ -48,10 +48,21 @@ main {
   background: #f3f3f3;
   display: flex;
   justify-content: center;
+  width: 100%;
 
 
   .container {
     width: 940px;
+    padding: 26px;
+    box-sizing: content-box;
+
+    // @media (max-width: 992px) {
+    //   transform: scale(0.76);
+    // }
+
+    // @media (max-width: 768px) {
+    //   transform: scale(0.56);
+    // }
   }
 }
 

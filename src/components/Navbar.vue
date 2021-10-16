@@ -66,6 +66,8 @@ export default {
   background: #3c5569;
   border-radius: 4px;
   height: 60px;
+  
+  
 
   .logo {
     position: relative;
