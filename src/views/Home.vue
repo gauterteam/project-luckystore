@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,regular,500,600,700,800,300italic,italic,500italic,600italic,700italic,800italic);
 
 *,
 *::after,
@@ -42,6 +42,7 @@ export default {
   // border: 1px solid red;
   font-family: 'Open Sans', sans-serif;
   user-select: none;
+  font-weight: 400;
 }
 
 main {
@@ -49,7 +50,6 @@ main {
   display: flex;
   justify-content: center;
   width: 100%;
-
 
   .container {
     width: 940px;
