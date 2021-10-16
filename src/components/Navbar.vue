@@ -2,7 +2,7 @@
   <nav class="nav-bar">
     <div class="logo"><router-link to="/"><img src="../assets/Lo-go.png" alt="logo"></router-link></div>
 
-    <ul class="nav-menu">
+    <ul class="nav-menu" v-if="mad992">
       <li class="nav-menu-link">
         <div class="border-line">
           <router-link to="/men">Men</router-link>
@@ -43,16 +43,38 @@
         </div>
       </li>
     </ul>
-
-    <div class="search"><img src="../assets/Search-Icon.png" alt="logo"></div>
-    <div class="shopping"><img src="../assets/Shoppin-Cart-Icon.png" alt="logo"></div>
-    <div class="profile"><img src="../assets/Profile-Icon.png" alt="logo"></div>
+    <div class="ssp">
+      <div class="search"><img src="../assets/Search-Icon.png" alt="logo"></div>
+      <div class="shopping"><img src="../assets/Shoppin-Cart-Icon.png" alt="logo"></div>
+      <div class="profile"><img src="../assets/Profile-Icon.png" alt="logo"></div>
+    </div>
   </nav>
 </template>
 
 <script>
 export default {
-  name: 'TheNavbar'
+  name: 'TheNavbar',
+  data() {
+    return {
+      mad992: null,
+      windowWidth: null,
+    }
+  },
+  created() {
+    window.addEventListener('resize', this.updateWidth)
+    this.updateWidth()
+  },
+  methods: {
+    updateWidth() {
+      this.windowWidth = window.innerWidth
+      if (this.windowWidth < 992) {
+        this.mad992 = 0;
+        return
+      }
+      this.mad992 = 1
+      return
+    }
+  }
 }
 </script>
 
@@ -67,7 +89,13 @@ export default {
   border-radius: 4px;
   height: 60px;
   
-  
+  @media (max-width: 992px) {
+    justify-content: space-between;
+  }
+
+  .ssp {
+    display: flex;
+  }
 
   .logo {
     position: relative;
