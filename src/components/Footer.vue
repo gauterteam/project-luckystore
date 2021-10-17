@@ -23,11 +23,15 @@ a {
 }
 
 .footer {
-  height: 250px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  @media (max-width: 768px) {
+    transform: scale(0.8);
+  }
 
   .footer__title {
     display: flex;
@@ -53,5 +57,8 @@ a {
   padding: 15px 0;
   background: #3c5569;
   color: #fff;
+  @media (max-width: 768px) {
+    transform: scale(0.8);
+  }
 }
 </style>
