@@ -150,6 +150,10 @@ export default {
     transform: scale(0.8);
   }
 
+  @media (max-width: 576px) {
+    transform: scale(0.7);
+  }
+
   .titleBox {
     display: flex;
     flex-direction: column;
