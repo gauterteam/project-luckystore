@@ -45,8 +45,9 @@
     </ul>
     <div class="ssp">
       <div class="search"><img src="../assets/Search-Icon.png" alt="logo"></div>
-      <div class="shopping"><img src="../assets/Shoppin-Cart-Icon.png" alt="logo"></div>
-      <div class="profile"><img src="../assets/Profile-Icon.png" alt="logo"></div>
+      <div class="shopping" v-if="mad992"><img src="../assets/Shoppin-Cart-Icon.png" alt="logo"></div>
+      <div class="profile" v-if="mad992"><img src="../assets/Profile-Icon.png" alt="logo"></div>
+      <div class="cross-bar" v-if="!mad992"><i class="far fa-hamburger"></i></div>
     </div>
   </nav>
 </template>
@@ -91,10 +92,25 @@ export default {
   
   @media (max-width: 992px) {
     justify-content: space-between;
+    transform: scale(0.9);
+  }
+
+  @media (max-width: 768px) {
+    margin: 25px 0;
+    transform: scale(0.8);
   }
 
   .ssp {
     display: flex;
+
+    .cross-bar {
+      width: 60px;
+      i {
+        width: 24px;
+        height: 24px;
+        color: #fff;
+      }
+    }
   }
 
   .logo {

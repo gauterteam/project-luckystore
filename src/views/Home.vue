@@ -45,24 +45,41 @@ export default {
   font-weight: 400;
 }
 
+body {
+  background: #f3f3f3;
+}
+
+// the-navbar {
+//   height: 100%;
+// }
+
 main {
   background: #f3f3f3;
   display: flex;
   justify-content: center;
   width: 100%;
+  height: 800px;
+
+  // @media (max-width: 768px) {
+  //   transform: scale(0.9);
+  // }
 
   .container {
     width: 940px;
-    padding: 26px;
+    padding: 0 26px;
     box-sizing: content-box;
+    height: 700px;
+
+    @media (max-width: 768px) {
+      // transform: scale(0.9);
+      padding: 0;
+    }
 
     // @media (max-width: 992px) {
     //   transform: scale(0.76);
     // }
 
-    // @media (max-width: 768px) {
-    //   transform: scale(0.56);
-    // }
+    
   }
 }
 

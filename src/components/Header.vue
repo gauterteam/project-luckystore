@@ -142,6 +142,14 @@ export default {
   align-items: center;
   justify-content: center;
 
+  @media (max-width: 992px) {
+    transform: scale(0.9);
+  }
+
+  @media (max-width: 768px) {
+    transform: scale(0.8);
+  }
+
   .titleBox {
     display: flex;
     flex-direction: column;
