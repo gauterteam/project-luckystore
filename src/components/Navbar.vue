@@ -45,8 +45,9 @@
     </ul>
     <div class="ssp">
       <div class="search"><img src="../assets/Search-Icon.png" alt="logo"></div>
-      <div class="shopping"><img src="../assets/Shoppin-Cart-Icon.png" alt="logo"></div>
-      <div class="profile"><img src="../assets/Profile-Icon.png" alt="logo"></div>
+      <div class="shopping" v-if="mad992"><img src="../assets/Shoppin-Cart-Icon.png" alt="logo"></div>
+      <div class="profile" v-if="mad992"><img src="../assets/Profile-Icon.png" alt="logo"></div>
+      <div class="cross-bar" v-if="!mad992"><i class="fas fa-hamburger"></i></div>
     </div>
   </nav>
 </template>
@@ -54,25 +55,24 @@
 <script>
 export default {
   name: 'TheNavbar',
-  data() {
+  data () {
     return {
       mad992: null,
-      windowWidth: null,
+      windowWidth: null
     }
   },
-  created() {
+  created () {
     window.addEventListener('resize', this.updateWidth)
     this.updateWidth()
   },
   methods: {
-    updateWidth() {
+    updateWidth () {
       this.windowWidth = window.innerWidth
       if (this.windowWidth < 992) {
-        this.mad992 = 0;
+        this.mad992 = 0
         return
       }
       this.mad992 = 1
-      return
     }
   }
 }
@@ -88,13 +88,57 @@ export default {
   background: #3c5569;
   border-radius: 4px;
   height: 60px;
-  
+  width: 100%;
+
   @media (max-width: 992px) {
     justify-content: space-between;
+    transform: scale(0.9);
+    margin: 25px 0;
+  }
+
+  @media (max-width: 768px) {
+    margin: 5px 0;
+    transform: scale(0.8);
+  }
+
+  @media (max-width: 576px) {
+    margin: 0;
+    transform: scale(0.7);
+    // height: 70%;
+    // width: 70%;
+  }
+
+  @media (max-width: 320px) {
+    margin: 0;
+    transform: scale(0.6);
   }
 
   .ssp {
     display: flex;
+    align-items: center;
+
+    .cross-bar {
+      height: 60px;
+      width: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      cursor: pointer;
+      font-size: 22px;
+      position: relative;
+
+      &::before {
+        content: '';
+        background: #546a7b;
+        width: 1px;
+        height: 60px;
+        position: absolute;
+        top: 0px;
+        left: -1px;
+      }
+
+    }
   }
 
   .logo {
