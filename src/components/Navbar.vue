@@ -99,17 +99,10 @@ export default {
 
   @media (max-width: 768px) {
     margin: 5px 0;
-    transform: scale(0.8);
+    transform: scale(0.75);
   }
 
   @media (max-width: 576px) {
-    margin: 0;
-    transform: scale(0.7);
-    // height: 70%;
-    // width: 70%;
-  }
-
-  @media (max-width: 320px) {
     margin: 0;
     transform: scale(0.6);
   }
@@ -239,6 +232,7 @@ export default {
             transition: 0.5s ease-in;
             overflow: hidden;
             height: 140px;
+            z-index: 2;
 
             li {
               display: flex;
@@ -308,6 +302,7 @@ export default {
             transition: 0.5s ease-in;
             overflow: hidden;
             height: 140px;
+            z-index: 2;
 
             li {
               display: flex;
