@@ -4,11 +4,18 @@
       <div class="container">
         <the-navbar></the-navbar>
         <div class="slidebar">
-          <img src="../assets/2.jpg" v-if="index == 1">
-          <img src="../assets/1.jpg" v-if="index == 2">
-          <img src="../assets/3.jpg" v-if="index == 3">
-          <div class="right-arrow" @click="slideClickRight"><i class="far fa-arrow-alt-circle-right"></i></div>
-          <div class="left-arrow" @click="slideClickLeft"><i class="far fa-arrow-alt-circle-left"></i></div>
+          <div class="slider" id="slider" :style="{transform: `translateX(${index}px)`, transition: `${transition}`}">
+            <img src="../assets/2.jpg" class="img-slider">
+            <img src="../assets/4.jpg" class="img-slider">
+            <img src="../assets/3.jpg" class="img-slider">
+          </div>
+          <div class="right-arrow" @click="slideClickRight"><i class="fas fa-chevron-right"></i></div>
+          <div class="left-arrow" @click="slideClickLeft"><i class="fas fa-chevron-left"></i></div>
+          <div class="block-radio">
+            <div class="radio-1" v-bind:class="{act: idx == 1}"></div>
+            <div class="radio-2" v-bind:class="{act: idx == 2}"></div>
+            <div class="radio-3" v-bind:class="{act: idx == 3}"></div>
+          </div>
         </div>
         <div class="shop_cards">
           <the-card></the-card>
@@ -35,19 +42,45 @@ export default {
   },
   data() {
     return {
-      index: 1
+      index: 0,
+      transition: "transform 0.2s ease",
+      windowWidth: 0,
+      idx: 1
     }
+  },
+  mounted () {
+    this.$nextTick(function() {
+      // window.addEventListener('slider', this.getWindowWidth);
+      this.getWindowWidth()
+    })
   },
   methods: {
     slideClickRight() {
-      if (this.index < 3) {
-        this.index++
+      console.log(this.windowWidth);
+      if (this.index === -(this.windowWidth*2) ) {
+        this.transition = "none"
+        this.index = 0
+        this.idx = 1
+      } else {
+        this.transition = "transform 0.2s ease"
+        this.index -= this.windowWidth
+        this.idx += 1
       }
     },
     slideClickLeft() {
-      if (this.index > 1) {
-        this.index--
+      if (this.index === 0) {
+        this.transition = "none"
+        this.index = -(this.windowWidth*2)
+        this.idx = 3
+      } else {
+        this.transition = "transform 0.2s ease"
+        this.index += this.windowWidth
+        this.idx -= 1
       }
+    },
+    getWindowWidth() {
+      // this.windowWidth = document.documentElement.clientWidth
+      this.windowWidth = document.getElementById('slider').clientWidth
     }
   }
 }
@@ -69,7 +102,7 @@ export default {
 }
 
 main {
-  background: #d4d3da;
+  background: #f3f3f3;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -105,14 +138,66 @@ main {
       margin-bottom: 40px;
       width: 100%;
       position: relative;
+      overflow: hidden;
+      
+      .block-radio {
+        display: flex;
+        width: 50px;
+        height: 10px;
+        position: absolute;
+        bottom: 5%;
+        transform: translateX(-50%);
+        left: 50%;
+        // border: 1px solid red;
+        justify-content: space-between;
+        align-items: center;
+
+        .radio-1 {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: #ced3d7;
+        }
+
+        .radio-2 {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: #ced3d7;
+        }
+
+        .radio-3 {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: #ced3d7;
+        }
+
+        .act {
+          background: #f6b63a;
+        }
+      }
+
+      .slider {
+        display: flex;
+        width: 100%;
+        height: 100%;
+
+        .img-slider {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+        }
+      }
 
       .right-arrow {
         position: absolute;
         width: 50px;
         height: 50px;
         // border: 1px solid red;
-        right: 40px;
-        top: 195px;
+        right: 5%;
+        transform: translateY(-50%);
+        top: 50%;
         color: white;
         font-size: 50px;
         display: flex;
@@ -121,8 +206,16 @@ main {
         border-radius: 50%;
         cursor: pointer;
 
-        &:hover {
-          background: rgba(255, 255, 255, 0.3);
+        @media (max-width: 768px) {
+          width: 40px;
+          height: 40px;
+          font-size: 40px;
+        }
+
+        @media (max-width: 576px) {
+          width: 30px;
+          height: 30px;
+          font-size: 30px;
         }
       }
 
@@ -131,8 +224,9 @@ main {
         width: 50px;
         height: 50px;
         // border: 1px solid red;
-        left: 50px;
-        top: 195px;
+        left: 5%;
+        transform: translateY(-50%);
+        top: 50%;
         color: white;
         font-size: 50px;
         display: flex;
@@ -141,16 +235,17 @@ main {
         border-radius: 50%;
         cursor: pointer;
 
-        &:hover {
-          background: rgba(255, 255, 255, 0.3);
+        @media (max-width: 768px) {
+          width: 40px;
+          height: 40px;
+          font-size: 40px;
         }
-      }
 
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: 1s ease-in-out;
+        @media (max-width: 576px) {
+          width: 30px;
+          height: 30px;
+          font-size: 30px;
+        }
       }
 
       @media (max-width: 992px) {

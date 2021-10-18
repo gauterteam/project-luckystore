@@ -8,7 +8,7 @@
   </div>
   <div class="web__team">
       <h3>Created by Gauter Team</h3>
-    </div>
+  </div>
 </template>
 
 <script>
@@ -29,10 +29,6 @@ a {
   justify-content: center;
   flex-direction: column;
   background: #fff;
-
-  @media (max-width: 768px) {
-    transform: scale(0.8);
-  }
 
   .footer__title {
     display: flex;
@@ -58,8 +54,5 @@ a {
   padding: 15px 0;
   background: #3c5569;
   color: #fff;
-  @media (max-width: 768px) {
-    transform: scale(0.8);
-  }
 }
 </style>
