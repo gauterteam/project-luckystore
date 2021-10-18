@@ -1,5 +1,5 @@
 <template>
-  TheCard
+  The-Card
 </template>
 
 <script>

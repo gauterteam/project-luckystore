@@ -55,25 +55,24 @@
 <script>
 export default {
   name: 'TheNavbar',
-  data() {
+  data () {
     return {
       mad992: null,
-      windowWidth: null,
+      windowWidth: null
     }
   },
-  created() {
+  created () {
     window.addEventListener('resize', this.updateWidth)
     this.updateWidth()
   },
   methods: {
-    updateWidth() {
+    updateWidth () {
       this.windowWidth = window.innerWidth
       if (this.windowWidth < 992) {
-        this.mad992 = 0;
+        this.mad992 = 0
         return
       }
       this.mad992 = 1
-      return
     }
   }
 }
@@ -90,7 +89,7 @@ export default {
   border-radius: 4px;
   height: 60px;
   width: 100%;
-  
+
   @media (max-width: 992px) {
     justify-content: space-between;
     transform: scale(0.9);
