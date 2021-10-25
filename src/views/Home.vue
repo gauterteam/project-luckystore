@@ -20,7 +20,31 @@
         <div class="shop_cards">
           <the-card></the-card>
         </div>
-        <div class="registration"></div>
+        <div class="registration">
+          <div class="commit">
+            <div class="text-box">
+              <div class="img-box"></div>
+              <div class="sub-text">
+                I wonder if I've been changed in the night. Let me think. Was I the same when I got up this morning? I almost think I can remember feeling a little different. But if I'm not the same, the next question is 'Who in the world am I?'
+              </div>
+            </div>
+            <div class="user-box">
+              <div class="img-text">
+                <div class="user-img"></div>
+                <div class="user-text">
+                  <p>Jack Sparroe</p>
+                  <p>New York, USA</p>
+                </div>
+              </div>
+              <div class="etc">
+                <router-link to="#">See all reviews</router-link>
+              </div>
+            </div>
+          </div>
+          <div class="form">
+
+          </div>
+        </div>
       </div> 
     </main>
     <the-footer></the-footer>
@@ -98,7 +122,7 @@ export default {
   font-family: 'Open Sans', sans-serif;
   user-select: none;
   font-weight: 400;
-  // border: 1px solid red;
+  border: 1px solid red;
 }
 
 main {
@@ -106,13 +130,13 @@ main {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 910px;
+  // height: 910px;
 
   .container {
     width: 940px;
     padding: 0 26px;
     box-sizing: content-box;
-    height: 910px;
+    // height: 910px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -123,12 +147,12 @@ main {
         padding: 0;
       }
 
-      @media (max-width: 768px) {
+    @media (max-width: 768px) {
         padding: 0;
         height: 75%;
       }
 
-      @media (max-width: 576px) {
+    @media (max-width: 576px) {
         height: 60%;
         padding: 0;
       }
@@ -281,6 +305,84 @@ main {
       @media (max-width: 576px) {
         height: 60%;
         width: 60%;
+      }
+    }
+
+    .registration {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      .commit {
+        .text-box {
+          width: 620px;
+          height: 120px;
+          position: relative;
+
+          .img-box {
+            width: 620px;
+            height: 143px;
+            background: url(../assets/comma.png) no-repeat center / cover;
+            // position: absolute;
+            // top: 0;
+            // left: 0;
+          }
+
+          .sub-text {
+            width: 100%;
+            height: 100%;
+            padding: 30px;
+            font-size: 15px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #aaaaaa;
+          }
+        }
+
+        .user-box {
+          width: 620px;
+          // height: 120px;
+          display: flex;
+          justify-content: space-between;
+          margin: 15px 0;
+
+          .img-text {
+            display: flex;
+            align-items: center;
+
+            .user-img {
+              width: 100px;
+              height: 100px;
+              background: url(../assets/Camera.png);
+              margin: 0 15px 0 30px;
+            }
+
+            .user-text {
+              & p:nth-child(1) {
+                font-size: 20px;
+              }
+
+              & p:nth-child(2) {
+                font-size: 13px;
+                color: #aaa;
+              }
+            }
+          }
+
+          .etc {
+            a {
+              text-decoration: none;
+              color: #2799c9;
+              font-size: 13px;
+            }
+          }
+        }
+      }
+
+      .form {
+        width: 300px;
+        height: 245px;
       }
     }
 
